@@ -150,3 +150,41 @@ void Task3var2()
    
 }
 
+void Task4dop()
+{
+// Написать программу, которая определяет, является ли треугольник со сторонами a, b, c равнобедренным.
+    int a = Input("Введите длину стороны а треугольника a,b,c:");
+    int b = Input("Введите длину стороны b треугольника a,b,c:");
+    int c = Input("Введите длину стороны c треугольника a,b,c:");
+    if(a==c|| b==c||a==b)
+    {
+        Console.WriteLine($"Треугольника сто сторонами {a} {b} {c} - является равнобедренным");
+    }
+    else
+    {
+        Console.WriteLine($"Треугольника сто сторонами {a} {b} {c} - не является равнобедренным");
+    }
+    
+}
+
+void Task5dop()
+{
+    // На вход подаются год, номер месяца и день рождения человека, Определить возраст человека на момент 1 июля 2022 года.
+    int birthyear = Input("Введите год рождения:");
+    int birthmonth = Input("Введите месяц рождения:");
+    int birthday = Input("Введите день рождения:");
+
+    int realyear = Input("Введите год целевой даты:");
+    int realmonth = Input("Введите месяц целевой даты:");
+    int realday = Input("Введите день целевой даты:");
+    
+    int age = realyear - birthyear;
+    if(realmonth < birthmonth || (realmonth == birthmonth && realday < birthday))
+    {
+        age--;
+    }
+    Console.WriteLine($"Ваш возраст на {realday}.{realmonth}.{realyear}:{age} года (лет)");
+
+
+}
+
