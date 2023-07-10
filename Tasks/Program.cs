@@ -188,3 +188,29 @@ void Task5dop()
 
 }
 
+//для решения 3 задачи из доп.заданий
+
+double KalkulatDeposit(double deposit, double persent, int month)
+{
+    int count =1;
+    while(count <= month)
+    {
+        deposit = deposit +(deposit * persent);
+        count++;
+    }
+    return deposit;
+}
+
+void Task6dop()
+{
+    // Иван в начале года открыл счет в банке, вложив 1000 руб. Через каждый месяц размер вклада увеличивается на 1.5% от имеющейся суммы. Определить размер депозита через n месяцев.
+
+    int month = Input("Введите количество месяцев:");
+    double deposit = 1000;
+    double persent = 0.015;
+
+    double finishDeposit = KalkulatDeposit(deposit, persent, month);
+    Console.WriteLine($"Размер депозита через {month} месяцев равно:{finishDeposit}");
+}
+
+Task6dop();
