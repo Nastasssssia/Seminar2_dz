@@ -1,9 +1,11 @@
-﻿int Input(string text)
+﻿// для решения всех задач
+int Input(string text)
 {
     Console.Write(text);
     return Convert.ToInt32(Console.ReadLine());
 }
 
+// для решения второй задачи
 int Figure3(int number)
 {
     while(number > 999)
@@ -13,6 +15,7 @@ int Figure3(int number)
     return number % 10;
 }
 
+// для решения второй задачи
 bool NoNumber(int number)
 {
     if(number < 100)
@@ -22,6 +25,31 @@ bool NoNumber(int number)
     }
     return true;
 }
+
+// для решения третьей задачи
+bool Weekend(int weekday)
+{
+    if(weekday > 5)
+    {
+        return true;
+    }
+    return false;
+}
+   
+// для решения третьей задачи
+
+bool NoDay(int number)
+{
+    if(number > 0 && number <=7)
+    {
+        return true;
+    }
+    Console.WriteLine("Это не день недели");
+    return false;
+}
+
+
+
 
 void Task1()
 {
@@ -40,7 +68,7 @@ void Task1()
 
 void Task2var1()
 {
-    //Напишите программу, которая с помощью деления выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+    //Напишите программу, которая с помощью деления выводит третью цифру заданного числа или сообщает, что третьей цифры нет. 1-1 вариант решения 
     int number = Input("Введите число:");
     int figureK = 0;
     int figureT = 0;
@@ -70,6 +98,9 @@ void Task2var1()
 
 void Task2var2()
 {
+    
+    //2 способ решения задачи 2 с использованием методов
+
     int number = Input("Введите число:");
     if(NoNumber(number))
     {
@@ -79,4 +110,43 @@ void Task2var2()
     
 }
 
-Task2var2();
+void Task3var1()
+{
+    //Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным. 1-Й вариант решения
+
+    int day = Input("Введите день недели используя цифру от 1 до 7:");
+    if(day >=1 && day <= 7)
+    {
+        if(day ==6 || day == 7)
+        {
+            Console.WriteLine("Заданный день является выходным");
+        }
+        else
+        {
+            Console.WriteLine("Заданный день является будним");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Это не день недели");
+    }
+}
+
+void Task3var2()
+{
+   // Второй способ решения задачи 3 с использованием методов
+   int day = Input("Введите день недели используя цифры от 1 до 7:");
+   if(NoDay(day))
+   {
+    if(Weekend(day))
+   {
+        Console.WriteLine("Заданный день недели является выходным");
+   }
+   else
+   {
+        Console.WriteLine("Заданный день недели является будним");
+   }
+   }
+   
+}
+
